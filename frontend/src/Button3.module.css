@@ -1,0 +1,22 @@
+.btn{
+    position: relative;     
+    background-color: rgb(216, 214, 214);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 8px 10px;
+    margin-left: 270px;
+     width: 50px;
+     padding-left: 6px;
+     top: -12px;
+     right: 270px;
+     cursor: pointer;
+     box-shadow: 3px 3px 2px .5px rgb(65, 65, 65);   
+    }
+    
+
+.btn:hover{
+    box-shadow: 3px 3px 2px .5px rgb(19, 18, 18);   
+}

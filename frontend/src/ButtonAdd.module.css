@@ -1,0 +1,21 @@
+.btn{
+    position: relative;
+    
+    border: 1px solid #000000;
+    border-radius: 8px;
+    color: white;
+    background-color: orange;
+    text-decoration: none;
+    padding: 8px 10px;
+    margin-left: 270px;
+    width: 70px;
+    padding-left: 6px;
+    top: 65px;
+    cursor: pointer;
+    box-shadow: 3px 3px 2px .5px rgb(65, 65, 65);   
+
+}
+
+.btn:hover{
+    box-shadow: 3px 3px 2px .5px rgb(19, 18, 18);   
+}

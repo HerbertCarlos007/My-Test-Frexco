@@ -1,0 +1,28 @@
+.link_cart a{
+     font-size: 30px;
+     color: black;
+     position: relative;
+     display: flex;
+     justify-content: right;
+    right: 86px;
+     bottom: 70px;
+}
+
+.link_cart a:hover{
+    color: rgb(122, 122, 122);
+}
+
+.link_home a{
+    font-size: 20px;
+     color: black;
+     position: relative;
+     display: flex;
+     justify-content: right;
+    right: 170px;
+    bottom: 98px;
+    text-decoration: none;
+}
+
+.link_home a:hover{
+    color: rgb(122, 122, 122);
+}

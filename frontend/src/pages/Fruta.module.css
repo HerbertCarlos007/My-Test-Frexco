@@ -1,0 +1,42 @@
+.container{
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    width: 400px;
+    height: 180px;
+    border-radius: 25px;
+    border: 1px solid rgb(148, 146, 146);
+    margin-top: 2em;
+    margin-left: 10em;
+    font-size: 18px;
+    box-shadow: 2px 2px 2px 2px  black;
+    display: inline-block;
+}
+
+.container ul{
+    position: relative;
+    list-style-type: none;
+    top: 25px;
+    right: 125px;
+
+}
+
+.container hr{
+    position: relative;
+    top:50px;
+}
+
+.container img {
+    position: absolute;
+    width: 90px;
+    bottom: -6px;
+    left: 405px;
+    
+}
+
+.container:hover{
+    box-shadow: 2px 2px 2px 2px  rgb(107, 107, 107);
+}
+
+
+
