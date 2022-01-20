@@ -130,4 +130,17 @@
     color: black;
 }
 
+.cart_rows_wrapper {
+margin-top: 1rem;
+border-top: solid white 1px;
+border-bottom: solid white 1px;
+padding:2rem;
+}
+
+.clean_all_text{
+    color:white;
+    text-align: center;
+    margin-top: 5px;
+    border-top: solid 1px white;
+}
 
