@@ -19,6 +19,7 @@ import styles from './components/styles/App.module.css'
 function App() {
   
   return (
+    
     <Router>
       <Header/>
 
@@ -34,7 +35,7 @@ function App() {
 
       <Routes>
         <Route path='/cart' element={<Cart />}></Route>
-
+        <Route path='/edit/:id' element={<Cart/>}></Route>
         <Route path='/' element={<Fruta />}></Route>
       </Routes>
     </Router>

@@ -2,24 +2,33 @@
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
-    padding: 200px;
+    padding: 125px;
 }
 
 .label_to_quantifier{
     position: relative;
     display: flex;
     justify-content: center;
-    left: 120px;
-    top: 20px;
+    right: 105px;
+    top: 8px;
     color: white;
+    
 }
+
 
 .button_to_add{
     position:relative;
     right: 50px;
     width: 30px;
     height: 22px;
+    height: 25px;
+    bottom: 2px;
+    box-shadow: 1px 1px 1px .8px  black;
    
+}
+
+.button_to_add:hover{
+    color: orange;
 }
 
 
@@ -27,6 +36,76 @@
     position:relative;
     right:115px;
     width: 30px;
+    bottom: 2px;
+    box-shadow: 1px 1px 1px .8px  black;
    
     
 }
+
+.button_to_less:hover{
+    color: orange;
+}
+
+.product{
+    position: relative;
+    color: white;
+    left: 135px;
+    font-size: 18px;
+    bottom: 28px;
+   
+}
+
+.price{
+    position: relative;
+    color: white;
+    text-align: center;
+    left: 760px;
+    bottom: 25px;
+    font-size: 18px;
+}
+
+.total_pay{
+    position: relative;
+   text-align: center;
+   left: 1050px;
+   top: -8px;
+   color: white;
+   font-size: 18px;
+   top: -25px;
+}
+
+.delete_item{
+    position: relative;
+    left: 1160px;
+    top: -20px;
+    font-size: 25px;
+    bottom: 70px;
+    right: 38px;
+    color: white;
+    cursor: pointer; 
+}
+
+.delete_item:hover{
+    color: black;
+}
+
+
+
+.clean_cart{
+    position: relative;
+    text-align: right;
+    bottom: 65px;
+    color: white;
+    left: 1120px;
+    top: -2px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.clean_cart:hover{
+    color: black;
+}
+
+
+
+
