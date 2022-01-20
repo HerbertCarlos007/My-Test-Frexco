@@ -1,8 +1,9 @@
 import styles from '../styles/ButtonMore.module.css'
-
+import {Link } from 'react-router-dom'
 function ButtonMore(){
     return(
-        <button type='submit' className={styles.btn}>Adicionar</button>
+
+        <Link to="/cart"><button type='submit' className={styles.btn}>Adicionar</button></Link>
     )
 }
 

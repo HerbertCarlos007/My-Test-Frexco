@@ -9,14 +9,8 @@ import api from '../../api'
 import { useState } from 'react'
 import React, { useEffect } from 'react'
 
-
-
-
-
 function Fruta() {
     const [lista, setLista] = useState([])
-
-
 
     useEffect(() => {
         listarDados()
@@ -33,12 +27,14 @@ function Fruta() {
       let random =  Math.floor(Math.random() * (1000 - 100) + 100) / 100;
       return random
     }  
-     
-      
 
+    localStorage.setItem("fruta", listarDados)
+
+    let fruits=localStorage.getItem("fruta")
+
+     
     return (
     
-
         <div className='container'>
       {lista.map((fruta) =>
         <div className={styles.container}>

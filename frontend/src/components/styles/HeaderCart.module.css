@@ -2,29 +2,27 @@
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
-    padding: 125px;
+    padding: 0px 9vw  0 9vw ;
 }
 
-.label_to_quantifier{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    right: 105px;
-    top: 8px;
-    color: white;
+
+.buttons_container{
+
+}
+
+.button_to_add{ 
+    width: 30px;
+    height: 25px;
+    box-shadow: 1px 1px 1px .8px  black;
     
 }
 
 
-.button_to_add{
-    position:relative;
-    right: 50px;
+.button_to_less {
     width: 30px;
-    height: 22px;
     height: 25px;
-    bottom: 2px;
     box-shadow: 1px 1px 1px .8px  black;
-   
+    
 }
 
 .button_to_add:hover{
@@ -32,72 +30,41 @@
 }
 
 
-.button_to_less{
-    position:relative;
-    right:115px;
-    width: 30px;
-    bottom: 2px;
-    box-shadow: 1px 1px 1px .8px  black;
-   
-    
-}
 
 .button_to_less:hover{
     color: orange;
 }
 
 .product{
-    position: relative;
+    /* position: relative; */
     color: white;
-    left: 135px;
+    /* left: 135px; */
     font-size: 18px;
-    bottom: 28px;
-   
 }
 
 .price{
-    position: relative;
+    /* position: relative; */
     color: white;
     text-align: center;
-    left: 760px;
-    bottom: 25px;
+    /* left: 760px; */
     font-size: 18px;
 }
 
 .total_pay{
-    position: relative;
+    /* position: relative; */
    text-align: center;
-   left: 1050px;
-   top: -8px;
+   /* left: 1050px; */
    color: white;
    font-size: 18px;
-   top: -25px;
+ 
 }
-
-.delete_item{
-    position: relative;
-    left: 1160px;
-    top: -20px;
-    font-size: 25px;
-    bottom: 70px;
-    right: 38px;
-    color: white;
-    cursor: pointer; 
-}
-
-.delete_item:hover{
-    color: black;
-}
-
-
 
 .clean_cart{
-    position: relative;
+    /* position: relative; */
     text-align: right;
-    bottom: 65px;
+    /* top: 40px; */
     color: white;
-    left: 1120px;
-    top: -2px;
+    /* left: 1120px; */
     font-size: 20px;
     cursor: pointer;
 }
@@ -106,6 +73,61 @@
     color: black;
 }
 
+.product_quantity{
 
+    background-color: rgb(239, 239, 239);
+    padding: 0.2rem 0.3rem 0 0.3rem;
+    margin-left: 10px;
+    border: solid 1px black;
+
+}
+
+
+.cart_row_container{
+    display: flex;
+    position: relative;
+}
+
+/* Product  Fields */
+.quantity_container{
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+}
+
+.product_container{
+    width: 20%;
+    color:white;
+    text-align: center;
+}
+.price_container{
+    display: flex;
+    width:20%;
+    justify-content: flex-end;
+}
+
+.total_pay_container {
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+}
+
+
+.delete_container {
+    display: flex;
+    width:fit-content;
+    justify-content: flex-end;
+}
+.delete_item{
+    font-size: 25px;
+    color: white;
+    cursor: pointer; 
+    position:absolute;
+    right:0;
+}
+
+.delete_item:hover{
+    color: black;
+}
 
 

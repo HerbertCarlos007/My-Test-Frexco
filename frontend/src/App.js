@@ -12,10 +12,6 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import styles from './components/styles/App.module.css'
 
 
-
-
-
-
 function App() {
   
   return (
