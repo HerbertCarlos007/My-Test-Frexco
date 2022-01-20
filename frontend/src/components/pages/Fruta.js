@@ -1,11 +1,11 @@
-import Header from '../Header'
-import ButtonAdd from '../ButtonAdd'
-import Button2 from '../Button2'
-import Button3 from '../Button3'
+
+import ButtonMore from '../buttons/ButtonMore'
+import ButtonLess from '../buttons/ButtonLess'
+import ButtonAdd from '../buttons/ButtonAdd'
 import Tooltip from '@mui/material/Tooltip';
-import styles from './Fruta.module.css'
+import styles from '../styles/Fruta.module.css'
 import cesto_frutas from '../img/cesto_frutas.png'
-import api from '../api'
+import api from '../../api'
 import { useState } from 'react'
 import React, { useEffect } from 'react'
 
@@ -62,9 +62,9 @@ function Fruta() {
           </ul>
           <hr />
          
+          <ButtonMore></ButtonMore>
+          <ButtonLess></ButtonLess>
           <ButtonAdd></ButtonAdd>
-          <Button2></Button2>
-          <Button3></Button3>
           
 
         </div>

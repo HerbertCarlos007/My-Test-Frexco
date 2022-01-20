@@ -1,5 +1,5 @@
-import styles from './Cart.module.css'
-import HeaderCart from '../HeaderCart'
+
+import HeaderCart from '../header/HeaderCart'
 
 function Cart(){
    return( 

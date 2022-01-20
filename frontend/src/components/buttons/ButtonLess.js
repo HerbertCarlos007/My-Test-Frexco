@@ -1,7 +1,7 @@
-import styles from './Button2.module.css'
+import styles from '../styles/ButtonLess.module.css'
 import {useState} from 'react'
 
-function Button2(){
+function ButtonLess(){
 
     const [valor, setValor] = useState(0)
 
@@ -23,4 +23,4 @@ function Button2(){
     )
 }
 
-export default Button2
+export default ButtonLess

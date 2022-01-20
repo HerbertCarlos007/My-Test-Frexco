@@ -1,5 +1,5 @@
-import styles from './Header.module.css'
-import logo from './img/logo.png'
+import styles from '../styles/Header.module.css'
+import logo from '../img/logo.png'
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function Header(){

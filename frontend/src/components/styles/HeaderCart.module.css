@@ -1,0 +1,32 @@
+.header_cart label{
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    padding: 200px;
+}
+
+.label_to_quantifier{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 120px;
+    top: 20px;
+    color: white;
+}
+
+.button_to_add{
+    position:relative;
+    right: 50px;
+    width: 30px;
+    height: 22px;
+   
+}
+
+
+.button_to_less{
+    position:relative;
+    right:115px;
+    width: 30px;
+   
+    
+}
