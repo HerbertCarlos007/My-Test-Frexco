@@ -42,9 +42,9 @@
 }
 
 .product{
-    /* position: relative; */
+    
     color: white;
-    /* left: 135px; */
+  
     font-size: 18px;
 }
 
@@ -70,7 +70,7 @@
 .clean_cart{
     position: relative; 
     right: 11px;
-    bottom: 28px;
+    bottom: 128px;
     color: white;
     font-size: 20px;
     cursor: pointer;
@@ -110,7 +110,7 @@
     color:white;
     text-align: center;
     right: 1%;
-    bottom: 20px;
+    bottom: 24px;
 }
 .price_container{
     display: flex;
