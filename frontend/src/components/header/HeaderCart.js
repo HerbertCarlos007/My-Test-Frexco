@@ -1,15 +1,24 @@
 import styles from '../styles/HeaderCart.module.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { MdDelete } from 'react-icons/md'
 import Fruta from '../pages/Fruta'
-import React, { useEffect } from 'react'
-
 
 function HeaderCart() {
 
-    const [cart, setCarts] = useState([1, 2, 3])
+    const [products, setProducts] = useState([1, 2, 3])
 
     const [quantity, setQuantity] = useState(1)
+
+    useEffect(()=>{
+
+     getProductsFromLocalstorage()
+
+    },[])
+
+    const getProductsFromLocalstorage = ()=>{
+      const productsFromLocalstorage = JSON.parse(localStorage.getItem('cartFruits'))
+      setProducts(productsFromLocalstorage)
+    }
 
     const inscreaseQuantity = () => {
         setQuantity(quantity + 1)
@@ -19,6 +28,7 @@ function HeaderCart() {
         setQuantity(quantity - 1)
         if (quantity < 1) setQuantity(quantity === 1)
     }
+
 
 
     return (
@@ -34,11 +44,11 @@ function HeaderCart() {
             </div>
 
             <div className={styles.cart_rows_wrapper}>
-                {cart.length && cart.map((frutas) =>
+                {products.length && products.map((fruit) =>
 
                     <div className={styles.cart_row_container}>
                         <div className={styles.product_container}>
-                            <label className={styles.product}>Fruta</label>
+                            <label className={styles.product}>{fruit.name}</label>
                         </div>
                         <div className={styles.quantity_container}>
                             <div className={styles.buttons_container}>
@@ -60,7 +70,7 @@ function HeaderCart() {
                 )}
             </div>
 
-            {!cart.length ? <h1 className={styles.cart_is_empty}>Carrinho vazio</h1> : ''}
+            {!products.length ? <h1 className={styles.cart_is_empty}>Carrinho vazio</h1> : ''}
 
         </div>
 

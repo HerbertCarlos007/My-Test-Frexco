@@ -10,74 +10,64 @@ import { useState } from 'react'
 import React, { useEffect } from 'react'
 
 function Fruta() {
-    const [lista, setLista] = useState([])
+  const [lista, setLista] = useState([])
 
-    useEffect(() => {
-        listarDados()
-    }, [])
+  useEffect(() => {
+    listarDados()
+  }, [])
 
-    async function listarDados() {
-        const res = await api.get('/pegarFrutas')
-        
-        setLista(res.data)
-        console.log(res.data)
-    }
+  async function listarDados() {
+    const res = await api.get('/pegarFrutas')
 
-    
-    function generateRandomNumbers(){
-      let random =  Math.floor(Math.random() * (1000 - 100) + 100) / 100;
-      return random
-    }  
+    setLista(res.data)
+  }
 
-    const addToCart = (fruta) =>{
-      
-      localStorage.setItem('fruitsToBuy', fruta)
-      localStorage.getItem('fruitsToBuy')
-      console.log(fruta)
-      
-    }
 
-    
+  function generateRandomNumbers() {
+    let random = Math.floor(Math.random() * (1000 - 100) + 100) / 100;
+    return String(random).replace('.', ',')
+  }
 
-    return (
-    
-        <div >
+  const addToCart = (fruit) => {
+
+    const fruits = [fruit]
+    const stringfiedFruits = JSON.stringify(fruits);
+    localStorage.setItem('cartFruits', stringfiedFruits);
+
+  }
+
+
+
+  return (
+
+    <div >
       {lista.map((fruta) =>
-        <div className={styles.container}>
-          <ul>
 
-            <li>{fruta.name}</li>
-            <li>Kg</li>
-            <li>R$:{generateRandomNumbers()}</li>
-            
+        <Tooltip  title={`Carbohydrates: ${fruta.nutritions.carbohydrates}
+                       Protein: ${fruta.nutritions.protein}
+                        Fat: ${fruta.nutritions.fat} 
+                        Calories: ${fruta.nutritions.calories}
+                         Sugar: ${fruta.nutritions.sugar}`
 
-            <Tooltip title={`Carbohydrates: ${fruta.nutritions.carbohydrates}
-             Protein: ${fruta.nutritions.protein}
-              Fat: ${fruta.nutritions.fat} 
-              Calories: ${fruta.nutritions.calories}
-               Sugar: ${fruta.nutritions.sugar}`
+        }>
+          <div className={styles.container}>
+            <ul>
 
-            }>
+              <li>{fruta.name}</li>
+              <li>Kg</li>
+              <li>R$:{generateRandomNumbers()}</li>
               <img src={cesto_frutas} alt='Cesto de frutas' />
-
-            </Tooltip>
-
-          </ul>
-          <hr />
-         
-          <button className={styles.button} onClick={() => addToCart(fruta)}>Adicionar</button>
-          
-         
-         
-          
-
-        </div>
+            </ul>
+            <hr />
+            <button className={styles.button} onClick={() => addToCart(fruta)}>Adicionar</button>
+          </div>
+        </Tooltip>
       )}
 
 
     </div>
 
-    )
+  )
 }
 
 
