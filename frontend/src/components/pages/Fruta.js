@@ -28,10 +28,15 @@ function Fruta() {
       return random
     }  
 
-    localStorage.setItem("fruta", listarDados)
+    const addToCart = (fruta) =>{
+      
+      localStorage.setItem('fruitsToBuy', fruta)
+     
 
-    let fruits=localStorage.getItem("fruta")
+     
+    }
 
+    
      
     return (
     
@@ -58,9 +63,9 @@ function Fruta() {
           </ul>
           <hr />
          
-          <ButtonMore></ButtonMore>
-          <ButtonLess></ButtonLess>
-          <ButtonAdd></ButtonAdd>
+          <ButtonMore onClick={() => addToCart(fruta)}/>
+         
+         
           
 
         </div>

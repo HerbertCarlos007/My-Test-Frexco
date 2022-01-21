@@ -7,20 +7,26 @@
 
 
 .buttons_container{
-
+   
 }
 
 .button_to_add{ 
+    position: relative;
+    bottom: 23px;
     width: 30px;
     height: 25px;
+    right: 10px;
     box-shadow: 1px 1px 1px .8px  black;
     
 }
 
 
 .button_to_less {
+    position: relative;
+    bottom: 23px;
     width: 30px;
     height: 25px;
+    right: 10px;
     box-shadow: 1px 1px 1px .8px  black;
     
 }
@@ -43,28 +49,29 @@
 }
 
 .price{
-    /* position: relative; */
+     position: relative; 
     color: white;
     text-align: center;
-    /* left: 760px; */
+    bottom: 23px;
+    left: 23px;
     font-size: 18px;
 }
 
 .total_pay{
-    /* position: relative; */
+     position: relative; 
    text-align: center;
-   /* left: 1050px; */
+   left: 90px;
+   bottom: 23px;
    color: white;
    font-size: 18px;
  
 }
 
 .clean_cart{
-    /* position: relative; */
-    text-align: right;
-    /* top: 40px; */
+    position: relative; 
+    right: 11px;
+    bottom: 28px;
     color: white;
-    /* left: 1120px; */
     font-size: 20px;
     cursor: pointer;
 }
@@ -74,9 +81,11 @@
 }
 
 .product_quantity{
-
+    position: relative;
     background-color: rgb(239, 239, 239);
     padding: 0.2rem 0.3rem 0 0.3rem;
+    right: 12px;
+    bottom: 23px;
     margin-left: 10px;
     border: solid 1px black;
 
@@ -96,14 +105,18 @@
 }
 
 .product_container{
+    position: relative;
     width: 20%;
     color:white;
     text-align: center;
+    right: 1%;
+    bottom: 20px;
 }
 .price_container{
     display: flex;
     width:20%;
     justify-content: flex-end;
+    
 }
 
 .total_pay_container {
@@ -144,3 +157,7 @@ padding:2rem;
     border-top: solid 1px white;
 }
 
+.clean_all_cart_container{
+    display: flex;
+    justify-content: end;
+}
