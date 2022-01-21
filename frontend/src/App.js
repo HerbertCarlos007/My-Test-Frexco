@@ -31,7 +31,6 @@ function App() {
 
       <Routes>
         <Route path='/cart' element={<Cart />}></Route>
-        <Route path='/edit/:id' element={<Cart/>}></Route>
         <Route path='/' element={<Fruta />}></Route>
       </Routes>
     </Router>

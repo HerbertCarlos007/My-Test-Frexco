@@ -18,6 +18,7 @@ function Fruta() {
 
     async function listarDados() {
         const res = await api.get('/pegarFrutas')
+        
         setLista(res.data)
         console.log(res.data)
     }
@@ -31,21 +32,16 @@ function Fruta() {
     const addToCart = (fruta) =>{
       
       localStorage.setItem('fruitsToBuy', fruta)
-     console.log(fruta)
-
-      
-     
-     
+      localStorage.getItem('fruitsToBuy')
+      console.log(fruta)
       
     }
 
     
 
-    
-     
     return (
     
-        <div className='container'>
+        <div >
       {lista.map((fruta) =>
         <div className={styles.container}>
           <ul>
@@ -53,6 +49,7 @@ function Fruta() {
             <li>{fruta.name}</li>
             <li>Kg</li>
             <li>R$:{generateRandomNumbers()}</li>
+            
 
             <Tooltip title={`Carbohydrates: ${fruta.nutritions.carbohydrates}
              Protein: ${fruta.nutritions.protein}
@@ -69,6 +66,7 @@ function Fruta() {
           <hr />
          
           <button className={styles.button} onClick={() => addToCart(fruta)}>Adicionar</button>
+          
          
          
           
