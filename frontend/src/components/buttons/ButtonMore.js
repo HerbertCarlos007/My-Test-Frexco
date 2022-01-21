@@ -3,8 +3,9 @@ import {Link } from 'react-router-dom'
 function ButtonMore(){
 
     return(
-
-        <div className={styles.btn}>Adicionar</div>
+        <div>
+            <button type='submit' className={styles.btn}>Adicionar</button>
+        </div>
     )
 }
 

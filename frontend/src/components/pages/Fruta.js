@@ -31,10 +31,15 @@ function Fruta() {
     const addToCart = (fruta) =>{
       
       localStorage.setItem('fruitsToBuy', fruta)
-     
+     console.log(fruta)
 
+      
      
+     
+      
     }
+
+    
 
     
      
@@ -63,7 +68,7 @@ function Fruta() {
           </ul>
           <hr />
          
-          <ButtonMore onClick={() => addToCart(fruta)}/>
+          <button className={styles.button} onClick={() => addToCart(fruta)}>Adicionar</button>
          
          
           

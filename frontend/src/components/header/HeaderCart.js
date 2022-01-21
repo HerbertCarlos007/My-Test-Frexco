@@ -1,18 +1,19 @@
 import styles from '../styles/HeaderCart.module.css'
 import { useState } from 'react'
 import { MdDelete } from 'react-icons/md'
+import Fruta from '../pages/Fruta'
 
 
 function HeaderCart() {
 
     const [quantity, setQuantity] = useState(1)
-
+    
     const [hasBoughtSomething, setHasBoughtSomething] = useState(true)
-
+    
     const inscreaseQuantity = () => {
         setQuantity(quantity + 1)
     }
-
+    
     const decreaseQuantity = () => {
         setQuantity(quantity - 1)
         if (quantity < 1) setQuantity(quantity + 1)
@@ -33,6 +34,7 @@ function HeaderCart() {
                     <div className={styles.cart_row_container}>
                         <div className={styles.product_container}>
                             <label className={styles.product}>Fruta</label>
+                    
                         </div>
                         <div className={styles.quantity_container}>
                             <div className={styles.buttons_container}>
