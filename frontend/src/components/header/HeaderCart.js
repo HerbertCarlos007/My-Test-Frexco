@@ -59,7 +59,7 @@ function HeaderCart() {
                             <div className={styles.product_quantity}>{quantity}</div>
                         </div>
                         <div className={styles.price_container}>
-                            <label className={styles.price}>Valor</label>
+                            <label className={styles.price}>{fruit.price}</label>
                         </div>
                         <div className={styles.total_pay_container}>
                             <label class={styles.total_pay}>Total</label>

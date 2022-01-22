@@ -25,7 +25,7 @@ function Fruta() {
         const res = await api.get('/pegarFrutas')
         const stringfiedFruitArray  = JSON.stringify(res.data);
         localStorage.setItem('fruitsList', stringfiedFruitArray)
-        setList(stringfiedFruitArray)
+        setList(res.data)
       }
   }
 
