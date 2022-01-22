@@ -17,43 +17,33 @@ function HeaderCart() {
 
 
 
-    const valueTotalToPay = (productsFromLocalstorage) => {
+    const valueTotalToPay = (products) => {
 
-        if (localStorage.getItem('totalToPay')) {
-            const totalToPayParsed = localStorage.getItem('totalToPay')
+        if (localStorage.getItem('totalToPay') && !isNaN(Number(localStorage.getItem('totalToPay')))) {
+            const totalToPayParsed = parseFloat(localStorage.getItem('totalToPay'))
             setTotalToPay(totalToPayParsed);
             let totalValueSum = 0;
-            for (let i = 0; i <= productsFromLocalstorage.length; i++) {
-                if (productsFromLocalstorage[i]) {
-
-                    const formattedPrice = String(productsFromLocalstorage[i].price).replace(',', '.');
-
-                    totalValueSum += parseFloat(formattedPrice)
-
+            for (let i = 0; i <= products.length; i++) {
+                if (products[i]) {
+                    
+                    totalValueSum += parseFloat(products[i].totalValue)
                 }
             }
             const totalValueSumWithComma = String(totalValueSum).replace('.', ',')
             setTotalToPay(totalValueSumWithComma)
-            localStorage.setItem('totalToPay', totalValueSumWithComma)
+            localStorage.setItem('totalToPay', totalValueSum)
         } else {
             let totalValueSum = 0;
-            for (let i = 0; i <= productsFromLocalstorage.length; i++) {
-                if (productsFromLocalstorage[i]) {
-
-                    const formattedPrice = String(productsFromLocalstorage[i].price).replace(',', '.');
-
-                    totalValueSum += parseFloat(formattedPrice)
-
+            for (let i = 0; i <= products.length; i++) {
+                if (products[i]) {
+                    totalValueSum += products[i].totalValue
                 }
             }
             const totalValueSumWithComma = String(totalValueSum).replace('.', ',')
             setTotalToPay(totalValueSumWithComma)
-            localStorage.setItem('totalToPay', totalValueSumWithComma)
+            localStorage.setItem('totalToPay', totalValueSum)
         }
-
     }
-
-
 
     const getProductsFromLocalstorage = () => {
         let productsFromLocalstorage = [];
@@ -65,11 +55,10 @@ function HeaderCart() {
                 product.quantity = 1
 
                 if (!product.totalValue) {
-                    product.totalValue = product.price;
+                    const priceParsed = parseFloat(String(product.price).replace(',','.'))
+                    product.totalValue = priceParsed;
                 }
-                // 
                 return product
-
             }
             )
 
@@ -91,9 +80,7 @@ function HeaderCart() {
                 const formattedPrice = String(product.price).replace(',', '.');
                 const parsedPrice = parseFloat(formattedPrice)
                 product.totalValue = product.quantity * parsedPrice
-
             }
-
             return product
         })
         setProducts(productsArrayUpdated)
