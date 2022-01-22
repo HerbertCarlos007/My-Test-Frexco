@@ -7,8 +7,6 @@ function HeaderCart() {
 
     const [products, setProducts] = useState([])
 
-    const [quantity, setQuantity] = useState(1)
-
     const [totalToPay, setTotalToPay] = useState(0.0)
 
     useEffect(() => {
@@ -17,30 +15,41 @@ function HeaderCart() {
 
     }, [])
 
+
+
     const valueTotalToPay = (productsFromLocalstorage) => {
 
         if (localStorage.getItem('totalToPay')) {
-            const totalToPayParsed = JSON.parse(localStorage.getItem('totalToPay'))
+            const totalToPayParsed = localStorage.getItem('totalToPay')
             setTotalToPay(totalToPayParsed);
+            let totalValueSum = 0;
+            for (let i = 0; i <= productsFromLocalstorage.length; i++) {
+                if (productsFromLocalstorage[i]) {
+
+                    const formattedPrice = String(productsFromLocalstorage[i].price).replace(',', '.');
+
+                    totalValueSum += parseFloat(formattedPrice)
+
+                }
+            }
+            const totalValueSumWithComma = String(totalValueSum).replace('.', ',')
+            setTotalToPay(totalValueSumWithComma)
+            localStorage.setItem('totalToPay', totalValueSumWithComma)
         } else {
             let totalValueSum = 0;
             for (let i = 0; i <= productsFromLocalstorage.length; i++) {
                 if (productsFromLocalstorage[i]) {
-                   
+
                     const formattedPrice = String(productsFromLocalstorage[i].price).replace(',', '.');
 
                     totalValueSum += parseFloat(formattedPrice)
-                    
+
                 }
-
-
             }
             const totalValueSumWithComma = String(totalValueSum).replace('.', ',')
-            setTotalToPay(totalValueSumWithComma) 
+            setTotalToPay(totalValueSumWithComma)
             localStorage.setItem('totalToPay', totalValueSumWithComma)
-
         }
-
 
     }
 
@@ -50,24 +59,47 @@ function HeaderCart() {
         let productsFromLocalstorage = [];
         if (localStorage.getItem('cartFruits')) {
             productsFromLocalstorage = JSON.parse(localStorage.getItem('cartFruits'))
-           
-            const productsWithQuantities = productsFromLocalstorage.map(product => ({ ...product, quantity: 1 }))
-    
+
+            const productsWithQuantities = productsFromLocalstorage.map(product => {
+
+                product.quantity = 1
+
+                if (!product.totalValue) {
+                    product.totalValue = product.price;
+                }
+                // 
+                return product
+
+            }
+            )
+
             setProducts(productsWithQuantities)
-          
+
             valueTotalToPay(productsWithQuantities)
+
+            const stringfiedProducts = JSON.stringify(productsWithQuantities)
+
+            localStorage.setItem('cartFruits', stringfiedProducts)
         }
-       
     }
 
     const inscreaseQuantity = (name) => {
         const productsArrayUpdated = products.map(product => {
 
-            if (product.name === name) product.quantity = product.quantity + 1
+            if (product.name === name) {
+                product.quantity = product.quantity + 1
+                const formattedPrice = String(product.price).replace(',', '.');
+                const parsedPrice = parseFloat(formattedPrice)
+                product.totalValue = product.quantity * parsedPrice
+
+            }
 
             return product
         })
         setProducts(productsArrayUpdated)
+        const stringfiedProductArray = JSON.stringify(productsArrayUpdated)
+        localStorage.setItem('cartFruits', stringfiedProductArray)
+        valueTotalToPay(productsArrayUpdated)
     }
 
     const decreaseQuantity = (name) => {
