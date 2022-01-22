@@ -95,6 +95,12 @@
 
 }
 
+.total_to_pay_text{
+    font-size: ;
+    color: white;
+    font-size: 18px;
+}
+
 /* Product  Fields */
 .quantity_container{
     display: flex;
@@ -152,3 +158,9 @@ border-top: white solid 1px;
 .clean_all_cart_container{
 
 }
+
+.total_to_pay_container{
+    display: flex;
+    justify-content: end;
+}
+

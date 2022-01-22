@@ -32,10 +32,11 @@ function Fruta() {
   const addToCart = (fruit) => {
 
     if (!localStorage.getItem('cartFruits')) {
-      const stringfiedFruit = JSON.stringify(fruit)
+      const stringfiedFruit = JSON.stringify([fruit])
       localStorage.setItem('cartFruits', stringfiedFruit)
     } else {
-      const fruitsFromLocalStorage = JSON.parse(localStorage.getItem('cartFruits'))
+      const fruitsFromLocalStorage = JSON.parse(localStorage.getItem('cartFruits')) 
+      console.log('olá amigo', fruitsFromLocalStorage)
       fruitsFromLocalStorage.push(fruit)
       localStorage.setItem('cartFruits', JSON.stringify(fruitsFromLocalStorage))
     }
