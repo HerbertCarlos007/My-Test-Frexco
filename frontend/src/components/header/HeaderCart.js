@@ -9,27 +9,44 @@ function HeaderCart() {
 
     const [quantity, setQuantity] = useState(1)
 
-    useEffect(()=>{
+    useEffect(() => {
 
-     getProductsFromLocalstorage()
+        getProductsFromLocalstorage()
 
-    },[])
+    }, [])
 
-    const getProductsFromLocalstorage = ()=>{
+    const getProductsFromLocalstorage = () => {
         let productsFromLocalstorage = [];
-        if(localStorage.getItem('cartFruits')){
-        productsFromLocalstorage = JSON.parse(localStorage.getItem('cartFruits'))
-       }
-      setProducts(productsFromLocalstorage)
+        if (localStorage.getItem('cartFruits')) {
+            productsFromLocalstorage = JSON.parse(localStorage.getItem('cartFruits'))
+        }
+        const productsWithQuantities = productsFromLocalstorage.map(product => ({ ...product, quantity: 1 }))
+
+        setProducts(productsWithQuantities)
     }
 
-    const inscreaseQuantity = () => {
-        setQuantity(quantity + 1)
+    const inscreaseQuantity = (name) => {
+        const productsArrayUpdated = products.map(product => {
+
+            if (product.name === name) product.quantity = product.quantity + 1
+
+            return product
+        })
+        setProducts(productsArrayUpdated)
     }
 
-    const decreaseQuantity = () => {
-        setQuantity(quantity - 1)
-        if (quantity < 1) setQuantity(quantity === 1)
+    const decreaseQuantity = (name) => {
+        const productsArrayUpdated = products.map(product => {
+
+            if (product.name === name && product.quantity > 1){
+
+                product.quantity = product.quantity - 1
+
+            }
+
+            return product
+        })
+        setProducts(productsArrayUpdated)
     }
 
     return (
@@ -53,10 +70,10 @@ function HeaderCart() {
                         </div>
                         <div className={styles.quantity_container}>
                             <div className={styles.buttons_container}>
-                                <button onClick={decreaseQuantity} className={styles.button_to_less}>-</button>
-                                <button onClick={inscreaseQuantity} className={styles.button_to_add}>+</button>
+                                <button onClick={()=>decreaseQuantity(fruit.name)} className={styles.button_to_less}>-</button>
+                                <button onClick={()=>inscreaseQuantity(fruit.name)} className={styles.button_to_add}>+</button>
                             </div>
-                            <div className={styles.product_quantity}>{quantity}</div>
+                            <div className={styles.product_quantity}>{Number(fruit.quantity)}</div>
                         </div>
                         <div className={styles.price_container}>
                             <label className={styles.price}>{fruit.price}</label>
