@@ -5,7 +5,7 @@ import Fruta from '../pages/Fruta'
 
 function HeaderCart() {
 
-    const [products, setProducts] = useState([1, 2, 3])
+    const [products, setProducts] = useState([])
 
     const [quantity, setQuantity] = useState(1)
 
@@ -16,7 +16,10 @@ function HeaderCart() {
     },[])
 
     const getProductsFromLocalstorage = ()=>{
-      const productsFromLocalstorage = JSON.parse(localStorage.getItem('cartFruits'))
+        let productsFromLocalstorage = [];
+        if(localStorage.getItem('cartFruits')){
+        productsFromLocalstorage = JSON.parse(localStorage.getItem('cartFruits'))
+       }
       setProducts(productsFromLocalstorage)
     }
 
@@ -28,8 +31,6 @@ function HeaderCart() {
         setQuantity(quantity - 1)
         if (quantity < 1) setQuantity(quantity === 1)
     }
-
-
 
     return (
 
